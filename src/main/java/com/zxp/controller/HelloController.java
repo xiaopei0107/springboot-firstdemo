@@ -1,6 +1,7 @@
 package com.zxp.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @RequestMapping("/sayHello")
-    public String sayHello(){
-        return "Hello!";
+    public String sayHello(@RequestParam(value = "username") String username){
+        return "Hello!" +username;
     }
 }
